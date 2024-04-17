@@ -71,6 +71,14 @@ public:
 	// Pointer to online session interface
 	IOnlineSessionPtr OnlineSessionInterface;
 	//TSharedPtr< IOnlineSession> OnlineSessionInterface;
+
+protected:
+	UFUNCTION(BlueprintCallable)
+	void CreateGameSession();
+
+	void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);
+private:
+	FOnCreateSessionCompleteDelegate CreateSessionCompleteDelegate;
 	
 };
 
